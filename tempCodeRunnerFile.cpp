@@ -1,2 +1,8 @@
- s1.push(s2.top());
-                s2.pop();
+Node *BST::InSucc(Node *p)
+// {
+//     while (p && p->lchild != nullptr)
+//     {
+//         p = p->lchild;
+//     }
+//     return p;
+// }

@@ -7,6 +7,8 @@ struct node{
 };
 int search(char arr[],int strt,int end,char value);
 struct node *newNode(char data);
+
+
 struct node *buildTree(char in[],char pre[],int instrt,int inEnd)
 {
     static int preIndex=0;

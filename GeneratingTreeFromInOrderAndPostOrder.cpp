@@ -245,6 +245,27 @@ Node* Tree::generateFromTraversal(int *inorder, int *preorder, int inStart, int 
     return node;
 }
  
+
+ Node* Tree::generateFromTraversal(int *inorder, int *preorder, int inStart, int inEnd) {
+    // Reference: https://algorithms.tutorialhorizon.com/make-a-binary-tree-from-given-inorder-and-preorder-traveral/
+    static int preIndex = 0;
+
+    if (inStart > inEnd){
+        return nullptr;
+    }
+ 
+    Node* node = new Node(preorder[preIndex++]);
+ 
+    if (inStart == inEnd){
+        return node;
+    }
+ 
+    int splitIndex = searchInorder(inorder, inStart, inEnd, node->data);
+    node->lchild = generateFromTraversal(inorder, preorder, inStart, splitIndex-1);
+    node->rchild = generateFromTraversal(inorder, preorder, splitIndex+1, inEnd);
+ 
+    return node;
+}
  
 int main() {
  
