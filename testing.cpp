@@ -1,37 +1,76 @@
 #include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
-#define MAX 4
-struct Node
-{
-	int data;
-	Node* right, *down;
-	
-	Node(int x){
-	    data = x;
-	    right = NULL;
-	    down = NULL;
-	}
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-// n is the size of the matrix
-// function must return the pointer to the first element 
-// of the in linked list i.e. that should be the element at arr[0][0]
-Node* constructLinkedMatrix(int mat[MAX][MAX], int n)
-{
-     return  constructMatrix(mat,0,0,n,n);
-     
-}
-    Node* constructMatrix(int mat[MAX][MAX],int i,int j,int m,int n)
+
+// ["1->2->5","1->3"]
+class Solution {
+public:
+    vector<string> vc;
+    string binaryTreePaths(TreeNode *root,string str1)
     {
-      if (i > n - 1 || j > m - 1)
-      return NULL;
-     Node* temp = new Node(mat[i][j]);
-     temp->right = constructMatrix(mat, i, j + 1, m, n);
-     temp->down = constructMatrix(mat, i + 1, j, m, n);
-     return temp;
-}
+      //  static string str = "\"";
+        if(root==NULL)
+        {
+            str1.erase(str1.end()-2, str1.end()+0);
+            str1 += "\"";
+            return str1;
+        }
+        string str;
+        str += str1+to_string(root->val) + "->";
+        vc.push_back((str1+binaryTreePaths(root->left,str1)));
+         vc.push_back((str1+binaryTreePaths(root->right,str1)));
+        
+        
+        
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        binaryTreePaths(root,"");
+        return vc;     
+    }
 
-int main()
-{
+    
+};
 
-}
+
+
+
+ // vector<string> vc;
+        //  if(!root->left && !root->right)
+        // {
+        //     vc.push_back("\"" + root->val);
+        //     return vc;
+        // }
+        // TreeNode *temp = root;
+        // string str = "\"" + root->val;
+        // vc.push_back("\"");
+
+        // while(temp->left!=NULL || temp->right !=NULL)
+        // {
+            
+            
+        //     if(temp->left)
+        //     {
+        //         str += temp->val+"->";
+        //         temp = temp->left;
+        //     }
+        //     else if(temp->right)
+        //     {
+        //         str += temp->val+"->";
+        //         temp = temp->right;
+        //     }              
+        // } 
+        // if(temp)
+        // {
+        //     str += temp->val + "\"";
+        // }
+        // vc.push_back(str);
