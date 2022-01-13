@@ -1,51 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> result;
-        vector<pair<int,int>> temp;
-        int sum=0,i = 0,j=nums.size()-1;
-
-        
-        for(int k = 0;k<=j;k++)
-        {
-            temp.push_back(make_pair(nums[k],k));
-        }
-       sort(temp.begin(),temp.end());
- 
-    while (i < j) {
- 
-        sum = temp[i].first + temp[j].first;
-        if (sum == target)
-        {
-            result.push_back(temp[i].second); 
-             result.push_back(temp[j].second); 
-            return result;
-
-        }
-            
- 
-       
-        else if (sum < target)
-            i++;
- 
-
-        else
-            j--;
-    }
-         return result;
-    }
-};
+#define MAX 100000
 int main()
 {
-    vector<int> arr = {3,2,4};
+    int n, k, t;
+    int arr[MAX];
 
-     Solution solution;
-     vector<int>sol = solution.twoSum(arr,6);
-     cout << sol[0] << " " << sol[1]<< endl;
+    // cin >> t;
 
+    // while(t--)
+    // {ṁṁ
+    cin >> n >> k;
 
-
-
+    // int temp = n / 2 - 2, even = n / 2 - 1;
+    // int odd = n - 3;
+    arr[0] = 1;
+    arr[n - 1] = n;
+    int i = 1,j = 1;
+    while(i < n - 1)
+    {
+        if (i < n / 2)
+        {
+            j = i + 2;
+            arr[i] = j;
+            i++;
+        }
+        else
+        {
+            j = 2;
+            arr[i++] = j;
+            j = j+2;
+        }
+    }
+    // for(int i = 0;i<n;i++)
+    // {
+    //     arr[i] = i+1;
+    // }
+    // for(int i = 0;i<k;i++)
+    // {
+    //     for(int j = 1;j<n-i-2;j+2)
+    //     {
+    //         temp = arr[j];
+    //         arr[j] = arr[j+1];
+    //         arr[j+1] = temp;
+    //         }
+    // }
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    // }
 }

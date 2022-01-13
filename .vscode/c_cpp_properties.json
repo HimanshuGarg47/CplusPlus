@@ -4,7 +4,8 @@
             "name": "windows-gcc-x86",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\MinGW\\include"
+                "C:\\MinGW\\include",
+                "D:\\myCode\\C++\\CplusPlus\\PracticeProblems\\includes"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "${default}",

@@ -30,9 +30,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "d:/myCode/C++/CplusPlus/C++_in_short",
+      "cwd": "d:/myCode/C++/CplusPlus/PracticeProblems/CP",
       "environment": [],
-      "program": "d:/myCode/C++/CplusPlus/C++_in_short/build/Debug/outDebug",
+      "program": "d:/myCode/C++/CplusPlus/PracticeProblems/CP/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",

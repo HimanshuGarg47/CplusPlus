@@ -86,7 +86,9 @@
   ],
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.includePaths": [
-    "C:\\MinGW\\include"
+    "C:\\MinGW\\include",
+    "D:\\myCode\\C++\\CplusPlus\\PracticeProblems\\includes"
+
   ],
   "C_Cpp_Runner.linkerArgs": [],
   "C_Cpp_Runner.cStandard": "",
