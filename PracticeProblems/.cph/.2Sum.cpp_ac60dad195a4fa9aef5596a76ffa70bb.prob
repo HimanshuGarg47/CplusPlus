@@ -1,0 +1,1 @@
+{"name":"Local: 2Sum","url":"d:\\myCode\\C++\\CplusPlus\\PracticeProblems\\2Sum.cpp","tests":[{"id":1641666089089,"input":"1\n6 1","output":"1 3 5 2 4 6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\myCode\\C++\\CplusPlus\\PracticeProblems\\2Sum.cpp","group":"local","local":true}

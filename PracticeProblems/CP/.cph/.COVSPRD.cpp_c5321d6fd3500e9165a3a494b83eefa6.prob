@@ -1,0 +1,1 @@
+{"name":"Local: COVSPRD","url":"d:\\myCode\\C++\\CplusPlus\\PracticeProblems\\CP\\COVSPRD.cpp","tests":[{"id":1641574076584,"input":"4\n100 3\n2000 10\n6000 11\n1000000 15","output":"8\n1024\n3072\n248832"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\myCode\\C++\\CplusPlus\\PracticeProblems\\CP\\COVSPRD.cpp","group":"local","local":true}
