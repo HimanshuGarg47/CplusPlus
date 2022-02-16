@@ -1,1 +1,1 @@
-This repository contains all types of code in C/C++ that I have during learning
+This repository contains DSA topic code and problems also CP problems solutions. Thanku for visiting.
