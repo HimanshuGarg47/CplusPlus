@@ -1,1 +1,1 @@
-This repository contains DSA topic code and problems also CP problems solutions. Thanku for visiting.
+This repository contains all cpp files which have coded and see during my journey. Great!
