@@ -57,6 +57,11 @@ int main()
 {
     int arr[6] = {4, 5, 8, 2, 9, 1};
     int n = 6 , j , k;
+    for(int i : arr)
+    {
+        cout << i << " ";
+    }
+    cout << "\nAfter Selection Sort : ";
     for(int i = 0;i<= n-2;i++)
     {
         j = i+1;
@@ -72,5 +77,9 @@ int main()
     {
         cout << arr[i]  << " ";
     }
-    
+    cout << endl;
+    system("pause");
 }
+
+
+

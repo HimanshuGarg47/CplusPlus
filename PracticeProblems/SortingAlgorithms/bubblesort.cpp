@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 void swap(int *a, int *b)
 {
     int temp = *a;
@@ -26,10 +27,10 @@ void BubbleSort(vector<int> &vec, int n)
 }
 int main()
 {
-#ifndef ONLINE_JUDGE
-    freopen("../includes/input.txt", "r", stdin);
-    freopen("../includes/output.txt", "w", stdout);
-#endif
+// #ifndef ONLINE_JUDGE
+//     freopen("../includes/input.txt", "r", stdin);
+//     freopen("../includes/output.txt", "w", stdout);
+// #endif
 
     int temp = 0, n;
     cout << "Enter size of array\n";
@@ -51,6 +52,8 @@ int main()
             cout << " " << vec[i] << ",";
     }
     cout << vec[n - 1] << " ]\n";
+
     system("pause");
     return 0;
 }
+

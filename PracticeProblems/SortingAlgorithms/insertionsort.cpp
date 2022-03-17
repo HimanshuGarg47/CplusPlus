@@ -33,6 +33,6 @@ int main() {
  
     InsertionSort(A, sizeof(A)/sizeof(A[0]));
     Print(A, sizeof(A)/sizeof(A[0]), "Sorted A");
- 
+    system("pause");
     return 0;
 }

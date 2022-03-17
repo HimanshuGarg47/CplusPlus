@@ -6,7 +6,6 @@ vector<string> retpath(string p, int i, int j)
 {
     if (i == 1 && j == 1)
     {
-
         vector<string> vec;
         vec.push_back(p);
         return vec;
