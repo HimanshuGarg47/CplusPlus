@@ -24,6 +24,8 @@ void BFS(int G[][7], int start, int n)
         }
     }
 }
+
+
 void DFS(int G[][7], int start, int n)
 {
     static int visited[7] = {0};
@@ -33,7 +35,6 @@ void DFS(int G[][7], int start, int n)
     {
         printf("%d ", start);
         visited[start] = 1;
-
         for (j = 1; j < n; j++)
         {
             if (G[start][j] == 1 && visited[j] == 0)
@@ -41,6 +42,8 @@ void DFS(int G[][7], int start, int n)
         }
     }
 }
+
+
 int main()
 {
     int G[7][7] = {{0, 0, 0, 0, 0, 0, 0},

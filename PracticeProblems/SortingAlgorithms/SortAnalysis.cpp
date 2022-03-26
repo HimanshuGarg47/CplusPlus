@@ -13,7 +13,16 @@ void bubbleSort(int n, int arr[])
         }
     }
 }
-
+void printSort(int p, int arr[])
+{
+    // freopen("sorted.txt", "w", stdout);
+    cout << "";
+    for (int i = 0; i < p; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout << "\n";
+}
 int partition (int arr[], int low, int high)
 {
     int pivot = arr[high]; // pivot
@@ -131,11 +140,15 @@ void averageCase(int n, int arr[])
     }
     clock_t start, end;
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     bubbleSort(n, arr1);
+     cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
-    double time_taken = double(end - start) / double((CLOCKS_PER_SEC)*1000);
+    double time_taken = double(end - start) / double((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY BUBBLE SORT AVERAGE CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << " millisec\n";
+    cout << " sec\n\n\n\n";
 
     // selectionSort
     for (int i = 0; i < n; i++)
@@ -143,11 +156,15 @@ void averageCase(int n, int arr[])
         arr1[i] = arr[i];
     }
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     selectionSort(n, arr1);
+     cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY SELECTION SORT AVERAGE CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // insertion sort
     for (int i = 0; i < n; i++)
@@ -155,11 +172,15 @@ void averageCase(int n, int arr[])
         arr1[i] = arr[i];
     }
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     insertionSort(arr1, n);
+     cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY INSERTION SORT AVERAGE CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
 
     // merge sort
@@ -168,11 +189,15 @@ void averageCase(int n, int arr[])
         arr1[i] = arr[i];
     }
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     mergeSort(0,n-1,arr1);
+     cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY MERGE SORT AVERAGE CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
     
 
     // quickSort
@@ -181,66 +206,96 @@ void averageCase(int n, int arr[])
         arr1[i] = arr[i];
     }
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     quickSort(arr1,0,n-1);
+     cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY Quick SORT AVERAGE CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
+        cout << "\n\n\n\n";
+
 
 }
+
 void worstCase(int n, int arr[])
 {
     sort(arr, arr + n, greater<int>());
     // worstCase
     clock_t start, end;
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
     bubbleSort(n, arr);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
 
     double time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY BUBBLE SORT WORST CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // selectionsort
     sort(arr, arr + n, greater<int>());
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
     selectionSort(n, arr);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
 
      time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY SELECTION SORT WORST CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // insertionSort
     sort(arr, arr + n, greater<int>());
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
     insertionSort(arr, n);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
 
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY INSERION SORT WORST CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
 
     sort(arr, arr + n, greater<int>());
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
     mergeSort(0,n-1,arr);
+           cout << "After Sorting\n";
+
+    printSort(n,arr);
     end = clock();
 
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY MERGE SORT WORST CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";    
+    cout << "sec\n\n\n\n";    
 
 
     // quicksort
     sort(arr, arr + n, greater<int>());
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
     quickSort(arr, 0 , n-1);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
 
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY Quick SORT WORST CASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";    
+    cout << "sec\n\n\n\n";   
+        cout << "\n\n\n\n";
+ 
 
 }
 void bestCase(int n, int arr[])
@@ -249,54 +304,69 @@ void bestCase(int n, int arr[])
     // Best Case
     clock_t start, end;
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     bubbleSort(n, arr);
+    cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
-    double time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+    double time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY BUBBLE SORT BESTCASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // selectionSort
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     selectionSort(n, arr);
+    cout << "After Sorting\n";
+        printSort(n,arr);
+
     end = clock();
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY SELECTION SORT BESTCASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // insertionSort
     start = clock();
+    cout << "Before Sorting\n";
+    printSort(n,arr);
     insertionSort(arr, n);
+    cout << "After Sorting\n";
+        printSort(n,arr);
+
     end = clock();
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY INSERTION SORT BESTCASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // merge sort
       start = clock();
+       cout << "Before Sorting\n";
+    printSort(n,arr);
      mergeSort(0,n-1,arr);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY MERGE SORT BESTCASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
 
     // quick sort
     start = clock();
+     cout << "Before Sorting\n";
+    printSort(n,arr);
      quickSort(arr,0,n-1);
+       cout << "After Sorting\n";
+    printSort(n,arr);
     end = clock();
-     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC)*1000);
+     time_taken = double(end - start) / (double)((CLOCKS_PER_SEC));
     cout << "TIME TAKEN BY Quic SORT BESTCASE IS :" << fixed << time_taken << setprecision(6);
-    cout << "sec\n";
+    cout << "sec\n\n\n\n";
+    cout << "\n\n\n\n";
 
 }
-void printSort(int p, int arr[])
-{
-    // freopen("sorted.txt", "w", stdout);
-    bestCase(p, arr);
-    for (int i = 0; i < p; i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-}
+
 void randomGenerator(int arr[], int n)
 {
     // freopen("random.txt", "w", stdout);
@@ -312,7 +382,7 @@ void randomGenerator(int arr[], int n)
 int main()
 {
     // freopen("input.txt", "w" , stdout);
-    const long long int p[] = {100000};
+    const long long int p[] = {10};
     srand(time(NULL));
     // int n = rand() % p + 1;
 
