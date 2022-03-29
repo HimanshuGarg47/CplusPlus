@@ -2,7 +2,15 @@
 using namespace std;
 int main()
 {
-   int *ptr;
-   cout << sizeof(ptr);
+   int t;
+   cin >> t;
+   while(t--)
+   {
+      int n;
+      cin >> n;
+      string s;
+      cin >> s;
+      
+   }
    
 }

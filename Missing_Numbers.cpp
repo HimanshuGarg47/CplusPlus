@@ -1,48 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        vector<int> vec(4);
+        vector<long int> vec(4);
         int temp;
-        for(int i= 0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
             cin >> temp;
-            vec[i]   = temp;
+            vec[i] = temp;
         }
         sort(vec.begin(), vec.end());
-        int a, b;
-        b = (abs(vec[0] - vec[2])) /2;
-        a = (vec[2] - b);
-        if ((a * b )== vec[3] && a > 0 && b > 0 && vec[0] < 0)
+
+        long int xb,yb, ya;ds
+        xb = (int)(vec[2] + sqrt((vec[2] * vec[2]) - (4 * vec[3]))) / 2;
+        // ya = (vec[2]-sqrt((vec[2]*vec[2])-(4*vec[3])))/2;
+        // xb = ((-1*vec[2])+sqrt((vec[2]*vec[2])-(4*vec[3]*(-1))))/-2;
+        // yb = (-1*vec[2])-sqrt((vec[2]*vec[2])-(4*vec[3]*(-1)))/-2;
+
+        ya = (int)(vec[2] - xb);
+
+        if (xb != 0 && vec[0] < 0)
         {
-            if (b != 0)
-            {
-                if (floor(a / b) == vec[1])
-                    cout << a << " " << b << endl;
-                else
-                    cout << "-1 -1" << endl;
-            }
+            if (((xb * ya) == vec[3]) && (floor(ya / xb) == vec[1]) && ((ya - xb) == vec[0])  && xb > 0 && ya > 0 && xb < 10000 && ya < 10000)
+                cout << ya << " " << xb << endl;
             else
-            {
-                if (floor(b / a) == vec[1])
-                    cout << a << " " << b << endl;
-                else
-                    cout << "-1 -1" << endl;
-            }
+                cout << "-1 -1" << endl;
         }
-        else 
-        {
-            cout << "-1 -1" << endl;
-        }
-
-        // C++ program to print all prime factors
-
-        /* Driver code */
+        else
+            cout << -1 << " " << -1 << endl;
     }
 }
