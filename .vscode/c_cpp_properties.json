@@ -7,7 +7,7 @@
                 "C:\\MinGW\\include",
                 "D:\\myCode\\C++\\CplusPlus\\PracticeProblems\\includes"
             ],
-            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "compilerPath": "C:\\Program Files\\mingw32\\bin\\gcc.exe",
             "cStandard": "${default}",
             "cppStandard": "${default}",
             "intelliSenseMode": "windows-gcc-x86",
