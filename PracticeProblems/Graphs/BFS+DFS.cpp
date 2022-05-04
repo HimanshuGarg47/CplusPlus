@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <iostream>
 #include "../../includes/Queue.h"
+using namespace std;
 void BFS(int G[][7], int start, int n)
 {
     int i = start, j;
@@ -53,7 +55,9 @@ int main()
                    {0, 0, 1, 1, 0, 1, 1},
                    {0, 0, 0, 0, 1, 0, 0},
                    {0, 0, 0, 0, 1, 0, 0}};
-    BFS(G, 4, 7);
-
+    cout << "Output of BFS is \n";
+    BFS(G,1 , 7);
+    cout << "\nOutput of DFS is \n";
+    DFS(G, 1, 7);
     return 0;
 }

@@ -1,30 +1,27 @@
-#include <bits/stdc++.h>
+// C++ program to sizes of data types
+#include<iostream>
 using namespace std;
+
 int main()
 {
-   int t;
-   cin >> t;
-   while(t--)
-   {
-      int n;
-      cin >> n;
-      string s;
-      cin >> s;
-      bool check = false;
-      for(int i = 0;i<n;i++)
-      {
-         if(s[i]=='0' || s[i] == '5')
-         {
-            check = true;
-            break;
-         }
-         
-      }
-      if(check)
-      cout << "YES" << endl;
-      else
-      cout << "NO" << endl;
-
-   }
-   
+	cout << "Size of char : " << sizeof(char)
+	<< " byte" << endl;
+	cout << "Size of int : " << sizeof(int)
+	<< " bytes" << endl;
+	cout << "Size of short int : " << sizeof(short int)
+	<< " bytes" << endl;
+	cout << "Size of long int : " << sizeof(long int)
+	<< " bytes" << endl;
+	cout << "Size of signed long int : " << sizeof(signed long int)
+	<< " bytes" << endl;
+	cout << "Size of unsigned long int : " << sizeof(unsigned long int)
+	<< " bytes" << endl;
+	cout << "Size of float : " << sizeof(float)
+	<< " bytes" <<endl;
+	cout << "Size of double : " << sizeof(double)
+	<< " bytes" << endl;
+	cout << "Size of wchar_t : " << sizeof(wchar_t)
+	<< " bytes" <<endl;
+	
+	return 0;
 }

@@ -386,8 +386,7 @@ int main()
     srand(time(NULL));
     // int n = rand() % p + 1;
 
-    for (int i = 0; i < 1; i++)
-    {
+   
         int arr[p[i]];
         randomGenerator(arr, p[i]);
         // cout<<p<<"\n";
@@ -399,6 +398,6 @@ int main()
         bestCase(p[i], arr);
         worstCase(p[i], arr);
         cout << "\n\n\n";
-    }
+    
     system("pause");
 }
