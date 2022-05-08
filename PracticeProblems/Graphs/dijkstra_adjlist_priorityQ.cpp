@@ -24,11 +24,10 @@ int main()
 
    while(!pq.empty())
    {
-       int dist = pq.top().first;
-       int prev = pq.top().second;
+       int dist = pq.top().first;      // weight
+       int prev = pq.top().second;     // node
        pq.pop();
 
-       vector<pair<int,int>>::iterator it;
        for(auto it:g[prev])
        {
            int next = it.first;
