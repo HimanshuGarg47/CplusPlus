@@ -1,24 +1,50 @@
-def dfs(Adj, s , parent=None, order = None):
-    if parent is None:
-        parent = [None for v in Adj]
-        parent[s] = s
-        order = []
-    for v in Adj[s]:
-        if parent[v] is None:
-            parent[v] = s
-            dfs(Adj , v , parent , order)
-    order.append(s)
-    return parent , order
+'''Python program to print DFS traversal for complete graph'''
+from collections import defaultdict
 
-Adj = {
-    0:set([2]),
-    2:set([0,3,4]),
-    3:set([2,1]),
-    4:set([2]),
-    1:set([3])
-}
+# this class represents a directed graph using adjacency list representation
 
 
-parent , order = dfs(Adj ,2 , None , None)
-print(parent)
-print(order)
+class Graph:
+	# Constructor
+	def __init__(self):
+		# default dictionary to store graph
+		self.graph = defaultdict(list)
+
+	# Function to add an edge to graph
+	def addEdge(self, u, v):
+		self.graph[u].append(v)
+	# A function used by DFS
+
+	def DFSUtil(self, v, visited):
+		# Mark the current node as visited and print it
+		visited.add(v)
+		print(v,end=" ")
+
+		# recur for all the vertices adjacent to this vertex
+		for neighbour in self.graph[v]:
+			if neighbour not in visited:
+				self.DFSUtil(neighbour, visited)
+		# The function to do DFS traversal. It uses recursive DFSUtil
+
+	def DFS(self):
+		# create a set to store all visited vertices
+		visited = set()
+		# call the recursive helper function to print DFS traversal starting from all
+		# vertices one by one
+		for vertex in self.graph:
+			if vertex not in visited:
+				self.DFSUtil(vertex, visited)
+# Driver code
+# create a graph given in the above diagram
+
+print("Following is Depth First Traversal \n")
+g = Graph()
+g.addEdge(0, 1)
+g.addEdge(0, 2)
+g.addEdge(1, 2)
+g.addEdge(2, 0)
+g.addEdge(2, 3)
+g.addEdge(3, 3)
+g.DFS()
+
+# Improved by Dheeraj Kumar

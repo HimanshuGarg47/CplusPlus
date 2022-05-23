@@ -3,37 +3,44 @@
 using namespace std;
 // printing topological ordering using DFS
 
-
-class Solution {
-  void findTopoSort(int node, vector < int > & vis, stack < int > & st, vector < int > adj[]) {
+class Solution
+{
+  void findTopoSort(int node, vector<int> &vis, stack<int> &st, vector<int> adj[])
+  {
     vis[node] = 1;
 
-    for (auto it: adj[node]) {
-      if (!vis[it]) {
+    for (auto it : adj[node])
+    {
+      if (!vis[it])
+      {
         findTopoSort(it, vis, st, adj);
       }
     }
     st.push(node);
   }
-  public:
-    vector < int > topoSort(int N, vector < int > adj[]) {
-      stack < int > st;
-      vector < int > vis(N, 0);
-      for (int i = 0; i < N; i++) {
-        if (vis[i] == 0) {
-          findTopoSort(i, vis, st, adj);
-        }
-      }
-      vector < int > topo;
-      while (!st.empty()) {
-        topo.push_back(st.top());
-        st.pop();
-      }
-      return topo;
 
+public:
+  vector<int> topoSort(int N, vector<int> adj[])
+  {
+    stack<int> st;
+    vector<int> vis(N, 0);
+    for (int i = 0; i < N; i++)
+    {
+      if (vis[i] == 0)
+      {
+        findTopoSort(i, vis, st, adj);
+      }
     }
+    vector<int> topo;
+    while (!st.empty())
+    {
+      topo.push_back(st.top());
+      st.pop();
+    }
+    return topo;
+  }
 };
-// Time Complexity: O(N+E) 
+// Time Complexity: O(N+E)
 
 // N = Number of node , E = Number of Edges
 
@@ -45,11 +52,12 @@ class Solution {
 
 // Recursion call of DFS
 // { Driver Code Starts.
-int main() {
+int main()
+{
 
   int N = 6;
 
-  vector < int > adj[5 + 1];
+  vector<int> adj[5 + 1];
 
   adj[5].push_back(2);
   adj[5].push_back(0);
@@ -59,12 +67,13 @@ int main() {
   adj[3].push_back(1);
 
   Solution obj;
-  vector < int > res = obj.topoSort(6, adj);
+  vector<int> res = obj.topoSort(6, adj);
 
   cout << "Toposort of the given graph is:" << endl;
-  for (int i = 0; i < res.size(); i++) {
+  for (int i = 0; i < res.size(); i++)
+  {
     cout << res[i] << " ";
   }
 
   return 0;
-} 
+}

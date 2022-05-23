@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void Comb(vector<int> &vec, vector<int> ans, int start, int &end, int &r, int index)
+void Comb(vector<int> &vec, vector<int> ans, int start, int &end, int r, int index)
 {
     if (index == r)
     {
@@ -25,9 +25,11 @@ int main()
     vector<int> vec = {1,2,3,4};
 
     int end = vec.size() - 1;
-    for (int i = 1; i <= end+1; i++)
-    {
-        vector<int> ans(i);
-        Comb(vec, ans, 0, end, i, 0);
-    }
+    vector<int> ans(2);
+     Comb(vec, ans, 0, end,2, 0);
+    // for (int i = 1; i <= end+1; i++)
+    // {
+    //     vector<int> ans(i);
+    //     Comb(vec, ans, 0, end, i, 0);
+    // }
 }
