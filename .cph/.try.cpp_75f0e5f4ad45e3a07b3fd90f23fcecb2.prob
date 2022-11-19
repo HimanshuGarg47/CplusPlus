@@ -1,1 +1,0 @@
-{"name":"Local: try","url":"d:\\myCode\\C++\\CplusPlus\\try.cpp","tests":[{"id":1654272766578,"input":"4\n2\n1 9\n3\n1 1 2\n3\n2 4 8\n3\n1049600 33792 1280","output":"0\n1\n3\n10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\myCode\\C++\\CplusPlus\\try.cpp","group":"local","local":true}
