@@ -36,7 +36,6 @@ int main()
            {
                distTo[next] = distTo[prev] + nextDist;
                pq.push(make_pair(distTo[next],next));
-
            }
        }
    }

@@ -51,7 +51,7 @@ public:
 };
 
 class Graph
-{
+{   
     vector<vector<int>> edgelist;
     int V;
 
@@ -87,7 +87,7 @@ public:
                 ans += w;
                 cout << x << " -- " << y << " == " << w
                      << endl;
-            }
+            } 
         }
         cout << "Minimum Cost Spanning Tree: " << ans;
     }

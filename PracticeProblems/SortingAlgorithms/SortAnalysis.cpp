@@ -23,6 +23,8 @@ void printSort(int p, int arr[])
     }
     cout << "\n";
 }
+
+
 int partition (int arr[], int low, int high)
 {
     int pivot = arr[high]; // pivot
