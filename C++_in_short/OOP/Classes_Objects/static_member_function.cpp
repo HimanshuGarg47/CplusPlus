@@ -7,8 +7,8 @@ using namespace std;
  can be called even if no objects of the class exist and the static functions
   are accessed using only the class name and the scope resolution operator ::.
 
-A static member function can only access static data member,
- other static member functions and any other functions from outside the class.
+A static member function can only access static data member,...
+ ...other static member functions and any other functions from outside the class.
 */
 
 class Box

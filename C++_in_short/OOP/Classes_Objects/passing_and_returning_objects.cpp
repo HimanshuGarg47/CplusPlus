@@ -20,6 +20,7 @@ public:
         // returning the object
         return Ec;
     }
+    
 };
 int main()
 {

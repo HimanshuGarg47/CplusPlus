@@ -21,8 +21,8 @@ int sum(M m)
 {
     int M ::* px = &M :: x;
     int M ::* py = &M :: y;
-    M *pm = &m;
-    int S = m.*px + pm->*py;
+    M *pm = &m;       // creating object reference to pm pointer
+    int S = m.*px + pm->*py;   
     return S;
 }
 

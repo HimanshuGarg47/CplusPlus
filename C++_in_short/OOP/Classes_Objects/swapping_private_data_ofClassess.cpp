@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class class_2;
 // interesting thing about friend function is they..
 // ..can access private members of class (passed as objects in arguments in function)
+
+
+class class_2;
 
 class class_1
 {
@@ -18,7 +20,10 @@ public:
     {
         cout << "value : " << value << "\n";
     }
-    friend void exchange(class_1 &, class_2 &);
+
+    /* here class_2 is passing as agrugment before defining
+     therfore we need to declare class_2 first as above; */
+    friend void exchange(class_1 &, class_2 &);  
 };
 
 class class_2

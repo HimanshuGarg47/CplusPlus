@@ -23,7 +23,7 @@ void A::show(A a) const
     A *ap = &a;
 
     // ->* deferencing operator
-    cout << "ap -> *ip :" << ap ->* ip << endl;
+    cout << "ap -> *ip :" << ap->*ip << endl;
     cout << "ap -> m :" << ap->m << endl;
 }
 
