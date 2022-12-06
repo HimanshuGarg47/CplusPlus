@@ -12,13 +12,15 @@ class integer
 
     /*
       integer(integer);        //  is illegal
+
+
     Parameter can be of any type except
-        that of class to which it belongs
+    that of class to which it belongs
     
 ------------------------------------------------------
    
-   However , a contructor can accept a reference 
-        to its own class as parameter
+    However , a contructor can accept a reference 
+    to its own class as parameter
     public:
         integer(integer&);  // copy constructor
    */

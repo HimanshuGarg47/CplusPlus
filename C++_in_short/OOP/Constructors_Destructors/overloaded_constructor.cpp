@@ -6,7 +6,7 @@ class complax
     float x,y;
 
 public:
-    complax() {}    // constrctor no arg
+    complax() {}    // constructor no arg
     complax(float a) // constructor-one arg
     {
         x = y = a;   
@@ -44,7 +44,7 @@ int main()
    cout << "B = "; show(B);
    cout << "C = "; show(C);
 
-   // another way to give initial values (sec-ond method)
+   // another way to give initial values (second method)
    complax P,Q,R;     // define P,Q and R
    P = complax(2.5 , 3.9);    // initialize P
    Q = complax(1.6, 2.5);  // initialize Q
