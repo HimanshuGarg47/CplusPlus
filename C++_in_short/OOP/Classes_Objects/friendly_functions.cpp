@@ -25,7 +25,7 @@ int main()
 {
    sample X;  // object X
    X.setvalue();
-   cout << "Mean vlaue = " << X.mean(X) << "\n";
+   cout << "Mean vlaue = " <<  mean(X) << "\n";
 
    return 0;
 }
