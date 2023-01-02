@@ -60,8 +60,9 @@ void printInorder(Node *n)
     printInorder(n->right);
 }
 
-class Solution{
-  public:
+class Solution
+{
+public:
     /*You are required to complete this method */
     Node *newNode(int data)
     {
@@ -71,120 +72,186 @@ class Solution{
         // temp->height = 1;
         return (temp);
     }
-    
-    
+
     Node *leftRotate(Node *z)
     {
-        if(!z)
-        return z;
-        
-        
+        if (!z)
+            return z;
+
         Node *y = z->right;
         Node *t2 = y->left;
-        
+
         y->left = z;
         z->right = t2;
-        
+
         z->height = 1 + max(height(z->left), height(z->right));
-       y->height = 1 + max(height(y->left), height(y->right));
-        
+        y->height = 1 + max(height(y->left), height(y->right));
+
         return y;
     }
-    
+
     Node *rightRotate(Node *z)
     {
-        if(!z)
-        return z;
-        
-        
+        if (!z)
+            return z;
+
         Node *y = z->left;
         Node *t2 = y->right;
-        
+
         y->right = z;
         z->left = t2;
-        
-       z->height = 1 + max(height(z->left), height(z->right));
-       y->height = 1 + max(height(y->left), height(y->right));
-            
-            
+
+        z->height = 1 + max(height(z->left), height(z->right));
+        y->height = 1 + max(height(y->left), height(y->right));
+
         return y;
     }
     int height(Node *root)
     {
-        if(root==NULL)
-        return 0;
-         return root->height;
+        if (root == NULL)
+            return 0;
+        return root->height;
     }
-    
+
     int balanceFactor(Node *root)
     {
-        if(root==NULL)
-        return 0;
-        
+        if (root == NULL)
+            return 0;
+
         return height(root->left) - height(root->right);
-       
     }
-    
-    Node* insertToAVL(Node* node, int data)
+
+
+    Node *Balance_the_Tree(Node *node, int data)
     {
-        if(node == NULL)
-        return newNode(data);
-        
-        
-        if(data < node->data)
+        node->height = 1 + max(height(node->left), height(node->right));
+        int balance = balanceFactor(node);
+
+        // LL case
+        // Node *temp = node;
+        if (balance > 1)
         {
-            node->left = insertToAVL(node->left, data);
-            
-        }
-        else if(data > node->data)
-        {
-            node->right = insertToAVL(node->right, data);
-           
-        }
-        else
-        return node;
-        
-        
-      node->height = 1 + max(height(node->left), height(node->right));
-      int balance = balanceFactor(node);
-        
-       
-        
-        // LL case 
-       // Node *temp = node;
-        if(balance > 1)
-        {   
-            // LL case 
-            if(data < node->left->data)
-            return rightRotate(node);
-            
+            // LL case
+            if (data < node->left->data)
+                return rightRotate(node);
+
             // LR case so LR rotate
             else
             {
-              node->left = leftRotate(node->left);
-               return rightRotate(node);
+                node->left = leftRotate(node->left);
+                return rightRotate(node);
             }
-            
         }
-        
+
         // Right case
-        else if(balance < -1)
+        else if (balance < -1)
         {
             // RR case
-            if(data > node->right->data)
-            return leftRotate(node);
-            
+            if (data > node->right->data)
+                return leftRotate(node);
+
             // RL case so RL rotate
             else
             {
                 node->right = rightRotate(node->right);
-               return leftRotate(node);
+                return leftRotate(node);
             }
-            
         }
-        
+
         return node;
-        
+    }
+
+
+    Node *insertToAVL(Node *node, int data)
+    {
+        if (node == NULL)
+            return newNode(data);
+
+        if (data < node->data)
+        {
+            node->left = insertToAVL(node->left, data);
+        }
+        else if (data > node->data)
+        {
+            node->right = insertToAVL(node->right, data);
+        }
+        else
+            return node;
+
+        return Balance_the_Tree(node, data);
+    }
+
+
+    Node *minValueNode(Node *node)
+    {
+        Node *current = node;
+
+        /* loop down to find the leftmost leaf */
+        while (current && current->left != NULL)
+            current = current->left;
+
+        return current;
+    }
+
+    /* Given a binary search tree and a data, this function
+    deletes the data and returns the new root */
+    Node *deleteNode(Node *root, int data)
+    {
+        // base case
+        if (root == NULL)
+            return root;
+
+        // If the data to be deleted is
+        // smaller than the root's
+        // data, then it lies in left subtree
+        if (data < root->data)
+        {
+            root->left = deleteNode(root->left, data);
+            Balance_the_Tree(root, data);
+        }
+
+        // If the data to be deleted is
+        // greater than the root's
+        // data, then it lies in right subtree
+        else if (data > root->data)
+        {
+            root->right = deleteNode(root->right, data);
+            Balance_the_Tree(root);
+        }
+
+        // if data is same as root's data, then This is the node
+        // to be deleted
+        else
+        {
+            // node has no child
+            if (root->left == NULL && root->right == NULL)
+                return NULL;
+
+            // node with only one child or no child
+            else if (root->left == NULL)
+            {
+                Node *temp = root->right;
+                free(root);
+                return temp;
+            }
+            else if (root->right == NULL)
+            {
+                Node *temp = root->left;
+                free(root);
+                return temp;
+            }
+
+            // node with two children: Get the inorder successor
+            // (smallest in the right subtree)
+            Node *temp = minValueNode(root->right);
+
+            // Copy the inorder successor's content to this node
+            root->data = temp->data;
+
+            // Delete the inorder successor
+            root->right = deleteNode(root->right, temp->data);
+        }
+        return root;
     }
 };
 
