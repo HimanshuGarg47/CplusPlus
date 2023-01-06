@@ -1,7 +1,7 @@
 {
-  "C_Cpp_Runner.cCompilerPath": "C:\\MinGW\\bin\\gcc.exe",
-  "C_Cpp_Runner.cppCompilerPath": "C:\\MinGW\\bin\\g++.exe",
-  "C_Cpp_Runner.debuggerPath": "C:\\Program Files\\mingw32\\bin\\gdb.exe",
+  "C_Cpp_Runner.cCompilerPath": "C:\\mingw32\\bin\\gcc.exe",
+  "C_Cpp_Runner.cppCompilerPath": "C:\\mingw32\\bin\\g++.exe",
+  "C_Cpp_Runner.debuggerPath": "C:\\mingw32\\bin\\gdb.exe",
   "C_Cpp_Runner.makePath": "C:\\MinGW\\bin\\mingw32-make.exe",
   "files.associations": {
     "iostream": "cpp",
@@ -78,7 +78,7 @@
     "queue.h": "c",
     "stdlib.h": "c"
   },
-  "C_Cpp.errorSquiggles": "Enabled",
+  "C_Cpp.errorSquiggles": "enabled",
   "C_Cpp_Runner.warnings": [
     "-Wall",
     "-Wextra",
@@ -86,9 +86,8 @@
   ],
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.includePaths": [
-    "C:\\MinGW\\include",
+    "C:\\mingw32\\include",
     "D:\\myCode\\C++\\CplusPlus\\PracticeProblems\\includes"
-
   ],
   "C_Cpp_Runner.linkerArgs": [],
   "C_Cpp_Runner.cStandard": "",
@@ -100,5 +99,6 @@
   "C_Cpp_Runner.includeSearch": [
     "*",
     "**/*"
-  ]
+  ],
+  "C_Cpp_Runner.useMsvc": false
 }
