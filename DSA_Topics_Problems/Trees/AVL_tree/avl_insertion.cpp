@@ -216,7 +216,7 @@ public:
         else if (data > root->data)
         {
             root->right = deleteNode(root->right, data);
-            Balance_the_Tree(root);
+            Balance_the_Tree(root, data);
         }
 
         // if data is same as root's data, then This is the node

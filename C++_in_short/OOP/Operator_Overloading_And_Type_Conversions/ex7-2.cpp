@@ -20,6 +20,7 @@ public:
 
     Polar operator+(Polar p)
     {
+        cout << radius << " " << angle << endl;
         Polar res;
         float px = p.radius * cos(p.angle);
         float py = p.radius * sin(p.angle);

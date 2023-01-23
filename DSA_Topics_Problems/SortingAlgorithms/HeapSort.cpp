@@ -1,10 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// to get index of left child of node at index i
+int left(int i)
+{
+    return (2 * i) + 1;
+}
+
+// to get index of right child of node at index i
+int right(int i)
+{
+    return (2 * i) + 2;
+}
+
 void Heapify(vector<long long int> &vec, int n, int i) // Max heapifying
 {
-    int l = (2 * i) + 1; // left node
-    int r = (2 * i) + 2; // right node
+    int l = left(i);  // left node
+    int r = right(i); // right node
 
     int largest = i; // store index which hold largest element
 
@@ -14,11 +26,11 @@ void Heapify(vector<long long int> &vec, int n, int i) // Max heapifying
                              (l)   8       7 (r)
     after compare with left node we see right node is also greater than root ele but we need largest therefore vec[largest] */
 
-    if (vec[l] > vec[largest] && l < n)
+    if (l < n && vec[l] > vec[largest])
     {
         largest = l;
     }
-    if (vec[r] > vec[largest] && r < n)
+    if (r < n && vec[r] > vec[largest])
     {
         largest = r;
     }
@@ -49,24 +61,17 @@ void heapSort(vector<long long int> &vec, int n)
 
 int main()
 {
-    vector<long long int> vec = {
-        9810098100,
-        9891098910,
-        9810098101,
-        9891012345,
-        9988665544,
-        9891012344,
-        9898989898,
-        9810198100,
-        9891112346
+    vector<long long int> vec = {4, 6, 1, 2, 3, 5};
 
-    };
+    // print elements of array before heap sort
     for (long long int i : vec)
     {
         cout << i << " ";
     }
-    cout << "\nAfter Heap sort : ";
+
     heapSort(vec, vec.size());
+    
+    cout << "\nAfter Heap sort : ";
     for (long long int i : vec)
     {
         cout << i << " ";

@@ -388,7 +388,7 @@ int main()
     srand(time(NULL));
     // int n = rand() % p + 1;
 
-   int i = 2;
+        int i = 0;
         int arr[p[i]];
         randomGenerator(arr, p[i]);
         // cout<<p<<"\n";

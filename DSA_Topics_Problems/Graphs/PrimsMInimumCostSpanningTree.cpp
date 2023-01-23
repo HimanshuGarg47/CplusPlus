@@ -23,6 +23,7 @@ int main()
 
 	for (int i = 0; i < N; i++)
 		key[i] = INT_MAX, mstSet[i] = false;
+		
 	// general syntax for max heap priority queue  --->   priority_queue<int> gquiz;
 	// synatax for min heap queue --> priority_queue <int, vector<int>, greater<int>> g = gq;  
 	// therefore to make min heap priority queue of type pair<int,int> , syntax will be ---->> priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>
